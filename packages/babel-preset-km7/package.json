@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "author": "km7 <tlyspa@gmail.com>",
-  "homepage": "",
   "license": "MIT",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7kms/km7-kit/tree/master/packages/babel-preset-km7"
+  },
+  "homepage": "https://github.com/7kms/km7-kit/tree/master/packages/babel-preset-km7",
   "files": [
     "lib",
     "src"
