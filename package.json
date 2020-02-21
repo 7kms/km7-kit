@@ -46,5 +46,11 @@
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react": "^16.12.0"
+  },
+  "dependencies": {
+    "@km7/babel-preset": "file:packages/babel-preset-km7",
+    "@km7/eslint-config": "file:packages/eslint-config-km7",
+    "@km7/utils": "file:packages/km7-utils",
+    "km7": "file:packages/km7"
   }
 }

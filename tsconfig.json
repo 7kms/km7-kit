@@ -9,5 +9,13 @@
     "typeRoots": ["./typings", "node_modules/@types"]
   },
   "include": ["packages", "typings"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "lib", "fixtures", "examples"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "lib",
+    "fixtures",
+    "examples",
+    "packages/km7/templaes/**/*"
+  ]
 }
