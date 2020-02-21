@@ -1,6 +1,6 @@
 {
   "name": "km7",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "> TODO: description",
   "author": "_7km",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "km7": "./bin/km7.js"
   },
   "dependencies": {
-    "@km7/utils": "^1.0.1",
+    "@km7/utils": "^1.0.2",
     "chalk": "^3.0.0",
     "download-git-repo": "^3.0.2",
     "file-type": "^14.1.2",
