@@ -1,0 +1,105 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "scripts": {
+    "test": "umi test",
+
+    "start": "EGG_SERVER_ENV=prod ./node_modules/.bin/egg-scripts start --port={{eggPort}} --workers=1",
+    "start:staging": "EGG_SERVER_ENV=staging ./node_modules/.bin/egg-scripts start --port={{eggPort}} --workers=1",
+    "stop": "./node_modules/.bin/egg-scripts stop",
+    "prod": "./node_modules/.bin/egg-scripts start --workers=1",
+    "restart": "npm run stop && npm  run start",
+    "local": "EGG_SERVER_ENV=local ./node_modules/.bin/egg-bin dev --port={{eggPort}}",
+    "debug": "./node_modules/.bin/egg-bin debug --port={{eggPort}}",
+
+    "dev": "APP_ROOT=$PWD/src HTML=none PORT={{umiPort}} ./node_modules/.bin/umi dev",
+    "build": "APP_ROOT=$PWD/src UMI_ENV=prod HTML=none CI=true BABEL_POLYFILL=none ./node_modules/.bin/umi build",
+    "build:staging": "APP_ROOT=$PWD/src UMI_ENV=staging HTML=none CI=true BABEL_POLYFILL=none ./node_modules/.bin/umi build",
+    "analyze": "APP_ROOT=$PWD/src UMI_ENV=prod ANALYZE=true HTML=none CI=true ./node_modules/.bin/umi build",
+
+    "lint:es": "eslint --ext .js src mock tests",
+    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:prettier": "check-prettier lint",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "dependencies": {
+    "egg": "^2.26.0",
+    "egg-cors": "^2.2.3",
+    "egg-grpc": "^1.0.3",
+    "egg-mongoose": "^3.2.0",
+    "egg-router-plus": "^1.3.1",
+    "egg-scripts": "^2.12.0",
+    "egg-view-assets": "^1.6.0",
+    "egg-view-nunjucks": "^2.2.0",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@km7/eslint-config": "^1.0.0",
+    "@km7/utils": "^1.0.0",
+    "@types/jest": "^23.3.12",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-test-renderer": "^16.0.3",
+    "@umijs/plugin-qiankun": "^1.3.4",
+    "babel-eslint": "^9.0.0",
+    "check-prettier": "^1.0.3",
+    "egg-bin": "^4.14.0",
+    "eslint": "^5.4.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.7.0",
+    "stylelint": "^12.0.0",
+    "umi": "^2.12.7",
+    "umi-plugin-react": "^1.14.10",
+    "umi-types": "^0.3.0"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node .github/verifyCommitMsg.js"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "egg": {
+    "declarations": true
+  }
+}

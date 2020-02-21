@@ -1,0 +1,16 @@
+{
+  "name": "@km7/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint preset",
+  "author": "km7 <tlyspa@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "eslint-config-react-app": "^5.2.0"
+  }
+}

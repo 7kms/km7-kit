@@ -1,0 +1,20 @@
+node_modules
+.idea/
+.vscode
+logs/
+package-lock.json
+
+**/.umi/
+**/.umi-production
+run
+
+
+# 自定义
+webpack.config.js
+
+.DS_Store
+app/.DS_Store
+/config/manifest.json
+/app/public/src/
+/typings
+/upload

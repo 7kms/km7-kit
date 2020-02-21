@@ -1,0 +1,65 @@
+.sider {
+  z-index: 100;
+  box-shadow: 1px 1px 0 0 #e8e8e8;
+  // background-color:#e6f7ff;
+  box-shadow: 0 10px 4px rgba(0, 21, 41, 0.08);
+  :global {
+    .ant-layout-sider-children {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .ant-menu {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}
+
+.logo {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  cursor: pointer;
+  height: 61px !important;
+  line-height: 61px !important;
+  margin: 0 !important;
+  font-size: 24px;
+  overflow: hidden;
+  //text-align: center;
+  padding-left: 30px;
+  // border-bottom: 1px solid #e8e8e8;
+  a {
+    text-decoration: none;
+  }
+  span {
+    font-size: 18px;
+    margin-left: 0.5em;
+  }
+}
+
+.menusCon {
+  height: calc(100vh - 61px);
+  overflow: auto;
+}
+
+.ani {
+  width: 200px;
+  animation-name: myani;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  background: linear-gradient(90deg, #edeef1 0%, #fff 50%, #edeef1 100%);
+  background-size: 200% 100%;
+  background-position: 200% 0;
+}
+
+@keyframes myani {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

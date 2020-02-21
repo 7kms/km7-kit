@@ -1,0 +1,50 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "father-build",
+    "changelog": "lerna-changelog",
+    "lint": "eslint --ext .js packages",
+    "precommit": "lint-staged",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "publish": "lerna-changelog && ./scripts/publish.js",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "node .github/verifyCommitMsg"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react-app": "^5.2.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "father-build": "^1.17.2",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lerna": "^3.20.2",
+    "lerna-changelog": "^1.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0"
+  }
+}

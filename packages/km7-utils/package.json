@@ -1,0 +1,23 @@
+{
+  "name": "@km7/utils",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "km7",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "moment": "^2.24.0"
+  }
+}

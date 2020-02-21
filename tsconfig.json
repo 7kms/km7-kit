@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "allowJs": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./typings", "node_modules/@types"]
+  },
+  "include": ["packages", "typings"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "lib", "fixtures", "examples"]
+}

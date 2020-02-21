@@ -1,0 +1,13 @@
+{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "extends": "eslint-config-umi",
+  "rules": {
+    "default-case": 0,
+    "eqeqeq": 0,
+    "jsx-a11y/href-no-hash": "off"
+  }
+}
