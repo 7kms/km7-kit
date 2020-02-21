@@ -21,6 +21,6 @@
     },
     "skipLibCheck": false
   },
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "packages/km7/templates"]
+  "include": ["src/**/*","typings","app"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

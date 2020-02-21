@@ -1,11 +1,17 @@
 # `km7`
 
-> TODO: description
+> 模板脚手架.
+
+- 支持 web 后台 web-backend
 
 ## Usage
 
-```
-const km7 = require('km7');
+```shell
 
-// TODO: DEMONSTRATE API
+km7 --help
+```
+
+```shell
+
+km7 init myproject -t web-backend
 ```

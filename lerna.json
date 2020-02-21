@@ -5,7 +5,9 @@
       "pr(bug)": ":bug: Bug Fix",
       "pr(documentation)": ":book: Documentation",
       "pr(dependency)": ":deciduous_tree: Dependency",
-      "pr(chore)": ":turtle: Chore"
+      "pr(chore)": ":turtle: Chore",
+      "pr(breaking)": ":boom: Breaking Change",
+      "pr(internal)": ":house: Internal"
     },
     "repo": "7kms/km7-kit",
     "cacheDir": ".changelog"
