@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 const shell = require('shelljs');
-const { existsSync } = require('fs');
+const { existsSync, readdirSync } = require('fs');
 const { join } = require('path');
 const { fork } = require('child_process');
+const { getRepoDirByName } = require('./utils');
 
 if (!shell.exec('npm config get registry').stdout.includes('https://registry.npmjs.org/')) {
   console.error('Failed: set npm registry to https://registry.npmjs.org/ first');
@@ -49,8 +50,8 @@ cp.on('close', code => {
 });
 
 function publishToNpm() {
-  console.log(`repos to publish: ${updatedRepos.join(', ')}`);
-  updatedRepos.forEach(repo => {
+  const updatedReposDir = getRepoDirByName(updatedRepos);
+  updatedReposDir.forEach(repo => {
     shell.cd(join(cwd, 'packages', repo));
     // eslint-disable-next-line import/no-dynamic-require
     const { version } = require(join(cwd, 'packages', repo, 'package.json'));
