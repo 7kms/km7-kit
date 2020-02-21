@@ -242,5 +242,5 @@ fabric.properties
 /packages/*/lib
 /packages/*/dist
 
-package-lock.json
+
 .dist/
