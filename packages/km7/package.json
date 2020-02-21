@@ -21,7 +21,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@km7/utils": "file:../km7-utils",
+    "@km7/utils": "^1.0.1",
     "chalk": "^3.0.0",
     "download-git-repo": "^3.0.2",
     "file-type": "^14.1.2",
