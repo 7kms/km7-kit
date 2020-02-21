@@ -20,6 +20,9 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "bin": {
+    "km7": "./bin/km7.js"
+  },
   "dependencies": {
     "@km7/utils": "^1.0.1",
     "chalk": "^3.0.0",
