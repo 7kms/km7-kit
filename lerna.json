@@ -10,7 +10,8 @@
       "pr(internal)": ":house: Internal"
     },
     "repo": "7kms/km7-kit",
-    "cacheDir": ".changelog"
+    "cacheDir": ".changelog",
+    "nextVersion": "km7-kit@xx.xx.x"
   },
   "packages": ["packages/*"],
   "version": "independent"
