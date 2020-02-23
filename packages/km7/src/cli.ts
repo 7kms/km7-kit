@@ -35,3 +35,5 @@ program
   .description('新建项目')
   .option('-t,--template <project>', 'web|web-backend|web-ssr')
   .action(allActions.initProject);
+
+program.parse(process.argv);
