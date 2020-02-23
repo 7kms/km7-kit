@@ -49,7 +49,7 @@ export const generate = async (name, from, to, answers) => {
   console.log(symbols.success, chalk.green('项目初始化完成'));
 };
 
-export const generateTemplate = (from, to) => {
+export const generateTemplate = (name, from, to) => {
   const queryArr = [
     {
       name: 'description',

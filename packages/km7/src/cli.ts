@@ -12,15 +12,15 @@ export const allActions = {
     const baseTemplateDir = path.join(__dirname, '../templates/projects');
     const to = path.join(process.cwd(), name);
     const from = path.join(__dirname, `../templates/projects/${options.template}`);
-    if (!fs.existsSync(from)) {
+    if (!fs.existsSync(to)) {
       const arr = fs.readdirSync(baseTemplateDir);
       console.log(`The template ${chalk.red(options.template)} is not exists`);
       console.log(`${chalk.green(arr.join(' '))} supports`);
-      return;
+      return generateTemplate(name, from, to);
     } else {
       console.log(symbols.error, chalk.red(`${name} 项目已存在`));
+      return;
     }
-    return generateTemplate(from, to);
   },
 };
 
