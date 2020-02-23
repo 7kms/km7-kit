@@ -1,6 +1,6 @@
 {
   "name": "@km7/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "eslint preset",
   "author": "km7 <tlyspa@gmail.com>",
   "license": "MIT",
