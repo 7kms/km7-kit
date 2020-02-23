@@ -1,10 +1,10 @@
 import { AllConfig } from './conf';
 export default {
   API_TIMEOUT: 30000,
-  APPID: 'interview-web',
-  APPSECRET: 'interview-web',
-  OPAPPNAME: 'interview-web',
+  APPID: '{{name}}',
+  APPSECRET: '{{name}}-secret',
+  OPAPPNAME: '{{name}}',
   api: {
-    project: 'http://127.0.0.1:10241',
+    project: 'http://127.0.0.1:{{eggPort}}',
   },
 } as AllConfig;

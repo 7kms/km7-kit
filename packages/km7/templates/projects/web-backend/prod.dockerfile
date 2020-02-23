@@ -12,8 +12,7 @@ RUN apk --no-cache add --virtual native-deps \
 COPY package.json ./
 
 # 安装依赖
-RUN npm set @ndog:registry http://172.31.29.76:4873 && \
-    npm install --quiet --production
+RUN npm install --quiet
 
 FROM base as builder
 # 拷贝前端代码到工作目录
@@ -27,7 +26,7 @@ COPY --from=builder /var/nodejs/FE-PROJECT/app/public/ ./app/public/
 COPY --from=builder /var/nodejs/FE-PROJECT/config/manifest.json ./config/
 
 # 暴露容器端口
-EXPOSE 10241
+EXPOSE {{eggPort}}
 
 # 启动node应用
 CMD npm start
