@@ -16,7 +16,7 @@ export const allActions = {
       const arr = fs.readdirSync(baseTemplateDir);
       console.log(`The template ${chalk.red(options.template)} is not exists`);
       console.log(`${chalk.green(arr.join(' '))} supports`);
-    } else if (!fs.existsSync(to)) {
+    } else if (fs.existsSync(to)) {
       console.log(symbols.error, chalk.red(`${options.template} 项目已存在`));
     } else {
       return generateTemplate(name, from, to);
