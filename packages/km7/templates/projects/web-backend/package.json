@@ -55,7 +55,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^3.1.0",
+    "husky": "^4.2.3",
     "lint-staged": "^7.2.2",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.7.0",
@@ -78,9 +78,11 @@
       "git add"
     ]
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "node .github/verifyCommitMsg.js"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "node .github/verifyCommitMsg"
+    }
   },
   "engines": {
     "node": ">=10.0.0"
