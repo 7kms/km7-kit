@@ -37,7 +37,7 @@ const config: IConfig = {
   ignoreMomentLocale: true,
   // webpack 相关的配置
   outputPath: '../app/public/src',
-  publicPath: 'http://127.0.0.1:{{}}/',
+  publicPath: 'http://127.0.0.1:{{umiPort}}/',
   theme: {
     'card-actions-background': '#f5f8fa',
   },

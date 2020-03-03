@@ -7,7 +7,7 @@ class AdminController extends Controller {
   }
   async list(ctx) {
     try {
-      const res = this.service.list(ctx.request.query);
+      const res = await this.service.list(ctx.request.query);
       ctx.respondData(200, res);
     } catch (e) {
       this.app.logger.error(`error--AdminController : list`, e);
@@ -16,7 +16,7 @@ class AdminController extends Controller {
   }
   async searchList(ctx) {
     try {
-      const res = this.service.searchList(ctx.request.query);
+      const res = await this.service.searchList(ctx.request.query);
       ctx.respondData(200, res);
     } catch (e) {
       this.app.logger.error(`error--AdminController : searchList`, e);
@@ -25,7 +25,7 @@ class AdminController extends Controller {
   }
   async detail(ctx) {
     try {
-      const res = this.service.detail(ctx.params.id);
+      const res = await this.service.detail(ctx.params.id);
       ctx.respondData(200, res);
     } catch (e) {
       this.app.logger.error(`error--AdminController : detail`, e);
@@ -34,7 +34,7 @@ class AdminController extends Controller {
   }
   async remove(ctx) {
     try {
-      const res = this.service.update({ _id: ctx.params.id }, { active: false });
+      const res = await this.service.update({ _id: ctx.params.id }, { active: false });
       ctx.respondData(200, res);
     } catch (e) {
       this.app.logger.error(`error--AdminController : remove`, e);
@@ -44,7 +44,7 @@ class AdminController extends Controller {
   async update(ctx) {
     try {
       const { isMaster, ...rest } = ctx.request.body;
-      const res = this.service.update({ _id: ctx.params.id }, rest);
+      const res = await this.service.update({ _id: ctx.params.id }, rest);
       ctx.respondData(200, res);
     } catch (e) {
       this.app.logger.error(`error--AdminController : update`, e);

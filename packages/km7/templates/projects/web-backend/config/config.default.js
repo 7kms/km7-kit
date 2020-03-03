@@ -4,7 +4,7 @@
  * 一般也会作为开发环境的默认配置文件
  * */
 
-// const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 /**
