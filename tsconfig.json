@@ -5,6 +5,7 @@
     "jsx": "preserve",
     "allowJs": true,
     "noEmit": true,
+    "noImplicitAny": false,
     "strict": true,
     "esModuleInterop": true,
     "typeRoots": ["./typings", "node_modules/@types"]
