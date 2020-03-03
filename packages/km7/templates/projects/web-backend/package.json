@@ -19,7 +19,6 @@
     "analyze": "APP_ROOT=$PWD/src UMI_ENV=prod ANALYZE=true HTML=none CI=true ./node_modules/.bin/umi build",
 
     "lint:es": "eslint --ext .js src mock tests",
-    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
@@ -56,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^4.2.3",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.7.0",
     "stylelint": "^12.0.0",
@@ -65,17 +64,14 @@
     "umi-types": "^0.3.0"
   },
   "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
+    "**/*.less": [
+        "stylelint --fix --syntax less"
+    ],
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write"
+        "prettier --write"
     ],
-    "*.{ts,tsx}": [
-      "tslint --fix",
-      "git add"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
+    "**/*.{js,jsx,ts,tsx}": [
+        "eslint --fix"
     ]
   },
   "husky": {

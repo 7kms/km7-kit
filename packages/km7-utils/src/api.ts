@@ -44,9 +44,9 @@ class KM7Request {
   private baseObj: object;
   constructor(params?: ReqConfig) {
     this.baseObj = {
-      timeout: params.API_TIMEOUT || 60000,
+      timeout: params?.API_TIMEOUT || 60000,
       responseType: 'json',
-      baseURL: params.serverAPI,
+      baseURL: params?.serverAPI,
     };
     if (isClient()) {
       this.side = SideType.Client;
@@ -201,3 +201,5 @@ class KM7Request {
     return this.$apiProcess<T>(configObj);
   };
 }
+
+export default new KM7Request();
