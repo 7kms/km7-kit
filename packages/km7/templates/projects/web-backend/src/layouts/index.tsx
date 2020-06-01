@@ -4,15 +4,14 @@ import React, { useState } from 'react';
 import styles from './index.less';
 import Header from './Header';
 import Sider from './Sider';
-import withRouter from 'umi/withRouter';
+import {withRouter, useHistory} from 'umi';
 import Loading from '@/components/Loading';
 import { ConnectState } from '@/models/connect';
 import { RouteComponentProps } from 'react-router-dom';
-import router from 'umi/router';
 const { Content } = Layout;
 
 const goHome = () => {
-  router.replace('/');
+  useHistory().replace('/')
 };
 
 const useLayoutToggle = () => {

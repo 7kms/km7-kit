@@ -12,7 +12,7 @@ RUN apk --no-cache add --virtual native-deps \
 COPY package.json ./
 
 # 安装依赖
-RUN npm install --quiet
+RUN npm install --quiet --production
 
 FROM base as builder
 # 拷贝前端代码到工作目录
@@ -26,7 +26,7 @@ COPY --from=builder /var/nodejs/FE-PROJECT/app/public/ ./app/public/
 COPY --from=builder /var/nodejs/FE-PROJECT/config/manifest.json ./config/
 
 # 暴露容器端口
-EXPOSE {{eggPort}}
+EXPOSE 10241
 
 # 启动node应用
 CMD npm start

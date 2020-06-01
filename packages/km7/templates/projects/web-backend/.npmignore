@@ -1,4 +1,4 @@
-/node_modules
+node_modules
 .idea/
 .vscode
 logs/
@@ -7,7 +7,7 @@ package-lock.json
 **/.umi/
 **/.umi-production
 run
-typings/
+
 
 # 自定义
 webpack.config.js
@@ -16,3 +16,5 @@ webpack.config.js
 app/.DS_Store
 /config/manifest.json
 /app/public/src/
+/typings
+/upload

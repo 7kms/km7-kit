@@ -3,7 +3,7 @@ import { Reducer } from 'redux';
 import { getProfile, login, logout, resetPwd } from '../services/global';
 import AppConfig from '../config/index';
 import { message } from 'antd';
-import { router } from 'umi';
+import { useHistory } from 'umi';
 import totalmenu, { IAppMenu } from '@/data/menu';
 export interface IUser {
   username: string;
@@ -61,7 +61,7 @@ const GlobalModel: GlobalModelType = {
             user: res.data,
           },
         });
-        router.replace({ pathname: '/' });
+        useHistory().replace({ pathname: '/' });
       } else {
         message.error(res.msg);
       }

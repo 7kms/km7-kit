@@ -1,40 +1,14 @@
-import { IConfig } from 'umi-types';
 import { resolve } from 'path';
-const { name: pkgName } = require(resolve('package.json'));
+import { defineConfig } from 'umi';
+const { name: pkgName } = require(resolve(__dirname, '../package.json'));
 
 // ref: https://umijs.org/config/
-const config: IConfig = {
+export default defineConfig({
   publicPath: '/public/src',
   manifest: {
     fileName: resolve(process.cwd(), './config/manifest.json'),
   },
   hash: true,
-  plugins: [
-    [
-      'umi-plugin-react',
-      {
-        dva: {
-          immer: false,
-          hmr: true,
-        },
-        antd: true,
-        dynamicImport: { webpackChunkName: true },
-        title: '{{name}}',
-        dll: false,
-        routes: {
-          exclude: [
-            /model(s?)\.(j|t)sx?$/,
-            /service(s?)\.(j|t)sx?$/,
-            /models\//,
-            /components\//,
-            /services\//,
-            /utils\//,
-            /chart\/Container\.js$/,
-          ],
-        },
-      },
-    ],
-  ],
   chainWebpack(config) {
     config.optimization.runtimeChunk('single');
     config.optimization.splitChunks({
@@ -62,6 +36,4 @@ const config: IConfig = {
     opts.uglifyOptions.compress.drop_console = true;
     return opts;
   },
-};
-
-export default config;
+});

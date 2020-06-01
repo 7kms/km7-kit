@@ -1,26 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "esnext",
+    "lib": ["ES5", "ES6", "ESNext", "DOM", "DOM.Iterable"],
     "target": "esnext",
-    "lib": ["esnext", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "jsx": "react",
+    "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "allowJs": true,
-    "experimentalDecorators": true,
     "strict": true,
+    "noImplicitAny": false,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@@/*": ["src/.umi/*"]
     },
-    "skipLibCheck": false
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*","typings","app"],
+  "include": ["src/**/*", "config/**/*", ".umirc.ts", "typings/**/*", "app/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

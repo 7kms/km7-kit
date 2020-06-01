@@ -1,2 +1,2 @@
 import React from 'react';
-export default () => <div>{{name}}</div>;
+export default () => <div>interview-admin</div>;
