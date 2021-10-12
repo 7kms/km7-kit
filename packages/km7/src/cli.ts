@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import program from 'commander';
+import CryptoJS from 'crypto-js';
 import { spawn } from 'child_process';
 import chalk from 'chalk';
 import symbols from 'log-symbols';
@@ -35,5 +36,24 @@ program
   .description('新建项目')
   .option('-t,--template <project>', 'web|web-backend|web-ssr')
   .action(allActions.initProject);
+
+// 新建项目
+program
+  .command('aes <msg>')
+  .description('aes encrypt/decrypt<msg>')
+  .option('-e, --encrypt <key>', '秘钥')
+  .option('-d, --decrypt <key>', '秘钥')
+  .action((msg, options) => {
+    const { encrypt, decrypt } = options;
+    if (encrypt) {
+      const ciphertext = CryptoJS.AES.encrypt(msg, encrypt).toString();
+      console.log(chalk.red('encrypt:'), ciphertext);
+    } else if (decrypt) {
+      // Decrypt
+      const bytes = CryptoJS.AES.decrypt(msg, decrypt);
+      const originalText = bytes.toString(CryptoJS.enc.Utf8);
+      console.log(chalk.green('decrypt:'), originalText);
+    }
+  });
 
 program.parse(process.argv);

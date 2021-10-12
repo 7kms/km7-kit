@@ -28,6 +28,7 @@
   "dependencies": {
     "@km7/utils": "^1.0.8",
     "chalk": "^3.0.0",
+    "crypto-js": "^4.1.1",
     "download-git-repo": "^3.0.2",
     "file-type": "^14.1.2",
     "fs-extra": "^8.1.0",
